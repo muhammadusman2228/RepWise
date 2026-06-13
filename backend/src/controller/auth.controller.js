@@ -1,10 +1,8 @@
 import bcrypt from "bcrypt";
 import userModel from "../models/user.model.js";
-
 import crypto from "node:crypto";
 import { sendVerificationEmail } from "../config/mailer.js";
 import verificationModel from "../models/verification.model.js";
-
 import jwt from "jsonwebtoken";
 import config from "../config/config.js";
 
@@ -31,7 +29,16 @@ export const registerUser = async (req, res) => {
     userId: user._id,
     token,
   });
-  await sendVerificationEmail(email, name, token);
+  try {
+    await sendVerificationEmail(email, name, token);
+  } catch (emailErr) {
+    console.error("Verification email sending failed:", emailErr);
+    const verificationLink = `${config.BACKEND_URL}/api/verifyMe?token=${token}`;
+    console.log("==================================================");
+    console.log("MANUAL VERIFICATION LINK FOR TESTING/DEBUGGING:");
+    console.log(verificationLink);
+    console.log("==================================================");
+  }
   res.status(201).json({
     message: "User is registered Successfully",
     name,
@@ -50,11 +57,12 @@ export async function verifyMe(req, res) {
   const realUser = await userModel.findById(user.userId);
   realUser.isVerified = true;
   await realUser.save();
-  await verificationModel.deleteOne({token})
+  await verificationModel.deleteOne({ token });
   res.status(200).json({
     message: `${realUser.name} is verified Successfully`,
   });
 }
+
 export async function login(req, res) {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -121,10 +129,9 @@ export async function refresh(req, res) {
   });
 }
 
-export async function me(req,res){
+export async function me(req, res) {
   res.status(200).json({
-    success:true,
-    user:req.user
-  })
-
+    success: true,
+    user: req.user,
+  });
 }
