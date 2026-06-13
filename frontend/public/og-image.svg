@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f6f8fb"/>
+  <rect x="72" y="72" width="1056" height="486" rx="28" fill="#ffffff" stroke="#dfe5ec" stroke-width="2"/>
+  <rect x="124" y="132" width="88" height="88" rx="20" fill="#0f172a"/>
+  <path d="M146 176h16M174 176h16M136 158v36M200 158v36" stroke="#14b8a6" stroke-width="10" stroke-linecap="round"/>
+  <text x="244" y="173" fill="#14171f" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700">RepWise</text>
+  <text x="126" y="292" fill="#14171f" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700">Workout tracking with real training analytics</text>
+  <text x="126" y="354" fill="#687385" font-family="Inter, Arial, sans-serif" font-size="26">Log exercises, review volume, monitor effort, and build consistency.</text>
+  <rect x="126" y="430" width="180" height="56" rx="14" fill="#0f766e"/>
+  <text x="158" y="467" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Track smarter</text>
+  <path d="M766 446V280M838 446V210M910 446V332M982 446V252" stroke="#0f766e" stroke-width="34" stroke-linecap="round"/>
+  <path d="M730 454h292" stroke="#dfe5ec" stroke-width="4" stroke-linecap="round"/>
+</svg>

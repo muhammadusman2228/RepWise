@@ -1,0 +1,17 @@
+{
+  "name": "RepWise",
+  "short_name": "RepWise",
+  "description": "Workout tracking and training analytics for strength, fitness, and consistency.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

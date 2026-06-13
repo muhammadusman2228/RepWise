@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+:root {
+  --auth-panel-rgb: 246, 248, 251;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f6f8fb;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #f6f8fb;
+}
+
+.authenticated-bg-overlay {
+  background:
+    radial-gradient(circle at 78% 12%, rgb(15 118 110 / 0.16), transparent 34%),
+    linear-gradient(90deg, rgb(246 248 251 / 0.9), rgb(246 248 251 / 0.74) 42%, rgb(246 248 251 / 0.86));
+}
+
+.authenticated-app .bg-white,
+.authenticated-app .bg-white\/95 {
+  background-color: rgb(255 255 255 / 0.88) !important;
+  backdrop-filter: blur(18px) saturate(130%);
+}
+
+.authenticated-app .bg-\[\#f6f8fb\],
+.authenticated-app .bg-\[\#f8fafc\] {
+  background-color: rgb(248 250 252 / 0.74) !important;
+  backdrop-filter: blur(12px) saturate(120%);
+}
+
+:root[data-theme="dark"] {
+  --auth-panel-rgb: 8, 17, 31;
+  color-scheme: dark;
+}
+
+:root[data-theme="dark"] html,
+:root[data-theme="dark"] body {
+  background: #08111f;
+}
+
+:root[data-theme="dark"] .bg-\[\#f6f8fb\],
+:root[data-theme="dark"] .bg-\[\#f8fafc\] {
+  background-color: #08111f !important;
+}
+
+:root[data-theme="dark"] .bg-white,
+:root[data-theme="dark"] .bg-\[\#ffffff\],
+:root[data-theme="dark"] .bg-white\/95 {
+  background-color: #111827 !important;
+}
+
+:root[data-theme="dark"] .bg-white\/90 {
+  background-color: rgb(17 24 39 / 0.9) !important;
+}
+
+:root[data-theme="dark"] .bg-\[\#f4f7fa\],
+:root[data-theme="dark"] .bg-\[\#edf1f5\],
+:root[data-theme="dark"] .bg-\[\#e8edf2\],
+:root[data-theme="dark"] .bg-\[\#e5e7eb\] {
+  background-color: #1f2937 !important;
+}
+
+:root[data-theme="dark"] .bg-\[\#e9f7f4\],
+:root[data-theme="dark"] .bg-\[\#eefaf7\] {
+  background-color: #123c39 !important;
+}
+
+:root[data-theme="dark"] .bg-\[\#eff6ff\],
+:root[data-theme="dark"] .bg-\[\#dbeafe\] {
+  background-color: #10233f !important;
+}
+
+:root[data-theme="dark"] .bg-\[\#fffbeb\] {
+  background-color: #33260b !important;
+}
+
+:root[data-theme="dark"] .bg-\[\#fff1f2\] {
+  background-color: #3a1620 !important;
+}
+
+:root[data-theme="dark"] .bg-\[\#14171f\] {
+  background-color: #0f766e !important;
+}
+
+:root[data-theme="dark"] .hover\:bg-\[\#f4f7fa\]:hover,
+:root[data-theme="dark"] .hover\:bg-\[\#edf1f5\]:hover {
+  background-color: #1f2937 !important;
+}
+
+:root[data-theme="dark"] .hover\:bg-\[\#fff1f2\]:hover {
+  background-color: #3a1620 !important;
+}
+
+:root[data-theme="dark"] .hover\:bg-\[\#2b303b\]:hover,
+:root[data-theme="dark"] .hover\:bg-\[\#115e59\]:hover {
+  background-color: #14b8a6 !important;
+}
+
+:root[data-theme="dark"] .text-\[\#14171f\],
+:root[data-theme="dark"] .hover\:text-\[\#14171f\]:hover {
+  color: #e5edf7 !important;
+}
+
+:root[data-theme="dark"] .text-\[\#445064\] {
+  color: #c4cedc !important;
+}
+
+:root[data-theme="dark"] .text-\[\#687385\],
+:root[data-theme="dark"] .text-\[\#64748b\],
+:root[data-theme="dark"] .text-\[\#94a3b8\] {
+  color: #9aa6b8 !important;
+}
+
+:root[data-theme="dark"] .text-\[\#1d4ed8\],
+:root[data-theme="dark"] .text-\[\#2563eb\] {
+  color: #93c5fd !important;
+}
+
+:root[data-theme="dark"] .text-\[\#b45309\],
+:root[data-theme="dark"] .text-\[\#d97706\] {
+  color: #fbbf24 !important;
+}
+
+:root[data-theme="dark"] .text-\[\#be123c\],
+:root[data-theme="dark"] .text-\[\#dc2626\],
+:root[data-theme="dark"] .hover\:text-\[\#be123c\]:hover {
+  color: #fb7185 !important;
+}
+
+:root[data-theme="dark"] .text-\[\#0f766e\],
+:root[data-theme="dark"] .hover\:text-\[\#115e59\]:hover {
+  color: #2dd4bf !important;
+}
+
+:root[data-theme="dark"] .border-\[\#dfe5ec\],
+:root[data-theme="dark"] .border-\[\#edf1f5\],
+:root[data-theme="dark"] .border-\[\#cbd5e1\],
+:root[data-theme="dark"] .border-\[\#bfe7df\],
+:root[data-theme="dark"] .border-\[\#c7dcff\],
+:root[data-theme="dark"] .border-\[\#fde68a\] {
+  border-color: #263244 !important;
+}
+
+:root[data-theme="dark"] .border-\[\#fecdd3\],
+:root[data-theme="dark"] .hover\:border-\[\#fecdd3\]:hover {
+  border-color: #7f1d1d !important;
+}
+
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] textarea {
+  color: #e5edf7;
+}
+
+:root[data-theme="dark"] input::placeholder,
+:root[data-theme="dark"] textarea::placeholder {
+  color: #64748b;
+}
+
+:root[data-theme="dark"] svg line[stroke="#dfe5ec"],
+:root[data-theme="dark"] svg line[stroke="#edf1f5"] {
+  stroke: #263244;
+}
+
+:root[data-theme="dark"] .authenticated-bg-overlay {
+  background:
+    radial-gradient(circle at 78% 12%, rgb(45 212 191 / 0.14), transparent 34%),
+    linear-gradient(90deg, rgb(8 17 31 / 0.84), rgb(8 17 31 / 0.7) 42%, rgb(8 17 31 / 0.88));
+}
+
+:root[data-theme="dark"] .authenticated-app .bg-white,
+:root[data-theme="dark"] .authenticated-app .bg-white\/95 {
+  background-color: rgb(17 24 39 / 0.84) !important;
+  backdrop-filter: blur(18px) saturate(135%);
+}
+
+:root[data-theme="dark"] .authenticated-app .bg-\[\#f6f8fb\],
+:root[data-theme="dark"] .authenticated-app .bg-\[\#f8fafc\] {
+  background-color: rgb(8 17 31 / 0.68) !important;
+  backdrop-filter: blur(12px) saturate(120%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transition-opacity {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+@utility custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23687385'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 9l6 6 6-6'/></svg>");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  padding-right: 2.25rem;
+}
