@@ -15,6 +15,8 @@ const config = {
   EMAIL_PASS: process.env.EMAIL_PASS || process.env.SMTP_PASS,
   EMAIL_FROM: process.env.EMAIL_FROM || process.env.EMAIL_USER || process.env.SMTP_USER,
   EMAIL_FROM_NAME: process.env.EMAIL_FROM_NAME || "RepWise",
+  RESEND_API_KEY: process.env.RESEND_API_KEY,
+  BREVO_API_KEY: process.env.BREVO_API_KEY,
 };
 
 export default config;

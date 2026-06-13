@@ -5,6 +5,7 @@ import config from "./src/config/config.js";
 import connectDb from "./src/db/db.connect.js";
 
 dns.setServers(['8.8.8.8', '8.8.4.4'])
+dns.setDefaultResultOrder('ipv4first')
 dotenv.config()
 const port = config.PORT || 3000;
 
