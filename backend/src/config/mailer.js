@@ -11,8 +11,9 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const sendVerificationEmail = async (userEmail, name, token) => {
-  const verificationLink = `${config.BACKEND_URL}/api/verifyMe?token=${token}`;
+const sendVerificationEmail = async (userEmail, name, token, reqUrl) => {
+  const baseUrl = reqUrl || config.BACKEND_URL;
+  const verificationLink = `${baseUrl}/api/verifyMe?token=${token}`;
 
   const mailOptions = {
     from: `"${config.EMAIL_FROM_NAME}" <${config.EMAIL_FROM || config.EMAIL_USER}>`,

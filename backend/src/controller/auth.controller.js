@@ -29,15 +29,11 @@ export const registerUser = async (req, res) => {
     userId: user._id,
     token,
   });
+  const reqUrl = `${req.protocol}://${req.get("host")}`;
   try {
-    await sendVerificationEmail(email, name, token);
+    await sendVerificationEmail(email, name, token, reqUrl);
   } catch (emailErr) {
     console.error("Verification email sending failed:", emailErr);
-    const verificationLink = `${config.BACKEND_URL}/api/verifyMe?token=${token}`;
-    console.log("==================================================");
-    console.log("MANUAL VERIFICATION LINK FOR TESTING/DEBUGGING:");
-    console.log(verificationLink);
-    console.log("==================================================");
   }
   res.status(201).json({
     message: "User is registered Successfully",
